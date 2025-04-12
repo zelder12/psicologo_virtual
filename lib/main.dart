@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'ITCA-SerenIA - Psicólogo Virtual',
+      title: 'ITCA - Psicólogo Virtual',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
         scaffoldBackgroundColor: Colors.grey[900],
@@ -45,8 +45,8 @@ class _ChatScreenState extends State<ChatScreen> {
     setState(() {
       _messages.insert(0, {
         "text":
-            "¡Hola! Soy ITCA-SerenIA, tu psicólogo virtual. ¿En qué puedo ayudarte hoy?",
-        "sender": "ITCA-SerenIA",
+            "¡Hola! Soy un prototipo de psicólogo virtual de ITCA. ¿En qué puedo ayudarte hoy?",
+        "sender": "IA ITCA",
       });
     });
   }
@@ -65,14 +65,14 @@ class _ChatScreenState extends State<ChatScreen> {
 
     String response = await getAIResponse(input);
     setState(() {
-      _messages.insert(0, {"text": response, "sender": "ITCA-SerenIA"});
+      _messages.insert(0, {"text": response, "sender": "IA ITCA"});
       _isWaitingForResponse = false;
     });
   }
 
   Future<String> getAIResponse(String userInput) async {
     String apiKey =
-        "tu_api_key_aqui";
+        "API_KEY_HERE";
     String apiUrl = "https://api.openai.com/v1/chat/completions";
 
     String prompt = """
@@ -138,8 +138,7 @@ ITCA-SerenIA:
       );
 
       if (response.statusCode == 200) {
-        var data = jsonDecode(utf8.decode(
-            response.bodyBytes)); // Decodifica los caracteres especiales
+        var data = jsonDecode(utf8.decode(response.bodyBytes));
         return data["choices"][0]["message"]["content"].trim();
       } else {
         return "Error en la consulta a la IA: ${response.statusCode}";
@@ -161,7 +160,7 @@ ITCA-SerenIA:
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'ITCA-SerenIA - Psicólogo Virtual',
+          'ITCA - Psicólogo Virtual',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.grey[800],
