@@ -72,7 +72,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Future<String> getAIResponse(String userInput) async {
     String apiKey =
-        "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";
+        "tu_api_key_aqui";
     String apiUrl = "https://api.openai.com/v1/chat/completions";
 
     String prompt = """
