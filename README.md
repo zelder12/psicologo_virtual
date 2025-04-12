@@ -25,7 +25,7 @@ Para más detalles sobre la estructura, revisa la [Documentación del Proyecto](
 
 1. **Clonar el repositorio**  
      ```bash
-     git clone https://github.com/tu-usuario/psicologo-virtual.git
+     git clone https://github.com/zelder12/psicologo-virtual.git
      ```
 
 2. **Instalar dependencias**  
